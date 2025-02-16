@@ -1,0 +1,200 @@
+<!-- <Toolbar
+sx={{
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  minHeight: "57px",
+  px: { xs: 3, md: 6 },
+}}
+>
+{/* User Icon (Mobile Only) */}
+{!isDesktop && (
+<Box
+sx={{
+display: "flex",
+flexDirection: "column",
+alignItems: "center",
+textAlign: "center",
+gap: 0.3,
+}}
+>
+{!user?.isAuth ? (
+<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+<IconButton color="inherit" onClick={()=>openModal(true)}>
+  <HiOutlineUserCircle style={{ color: "black", fontSize: "2rem" }} />
+</IconButton>
+<Typography
+  sx={{
+    fontSize: { xs: "0.8rem", md: "0.9rem" },
+    color: "black",
+  }}
+>
+  Log In
+</Typography>
+</Box>
+) : (
+<LinkContainer to="/account">
+<Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+<IconButton color="inherit">
+  <HiOutlineUserCircle style={{ color: "black", fontSize: "2rem" }} />
+</IconButton>
+<Typography
+  sx={{
+    fontSize: { xs: "0.8rem", md: "0.9rem" },
+    color: "black",
+  }}
+>
+  Profile
+</Typography>
+</Box>
+</LinkContainer>
+)}
+</Box>
+)}
+{/* Logo */}
+  <Box
+    sx={{
+      ...(isDesktop
+        ? { marginRight: "auto" }
+        : {
+            position: "absolute",
+            left: "50%",
+            transform: "translateX(-50%)",
+          }),
+          ...(!isDesktop?{display:'none'}:{display:'block'}),
+    }}
+  >
+    <Box
+      component="a"
+      href="/"
+      sx={{
+        display: "block",
+        img: {
+          width: {
+            xs: "90px", // Smaller logo for mobile
+            sm: "60px",
+            md: "75px",
+          },
+          height: "auto",
+        },
+      }}
+    > 
+      <img src={logo} alt="logo" />
+    </Box>
+  </Box>
+
+      {/* <Box>
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+<InputLabel id="demo-simple-select-standard-label">Age</InputLabel>
+<Select
+labelId="demo-simple-select-standard-label"
+id="demo-simple-select-standard"
+value={age}
+onChange={handleChange}
+label="Age"
+>
+<MenuItem value="">
+  <em>None</em>
+</MenuItem>
+<MenuItem value={10}>Ten</MenuItem>
+<MenuItem value={20}>Twenty</MenuItem>
+<MenuItem value={30}>Thirty</MenuItem>
+</Select>
+</FormControl>
+      </Box> */}
+{/* Right Side Icons */}
+<Box
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    ...(isDesktop
+      ? { gap: 2, marginLeft: "auto" }
+      : { position: "absolute", right: 16 }),
+  }}
+>
+  {/* User Icon Desktop View*/}
+  {isDesktop &&  (
+    <Box>
+      {!user?.isAuth ?(
+         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+           <IconButton color="inherit" onClick={()=>openModal(true)}>
+             <HiOutlineUserCircle style={{ color: "black", fontSize: "2rem" }} />
+           </IconButton>
+           <Typography
+             sx={{
+               fontSize: { xs: "0.8rem", md: "0.9rem" },
+               color: "black",
+             }}
+           >
+             Log In
+           </Typography>
+         </Box>
+      ):(
+    <LinkContainer to="/account">
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column", // Stack icon and text
+        alignItems: "center",
+        textAlign: "center",
+        gap: 0.5, // Space between icon and text
+      }}
+    >
+      <IconButton color="inherit" >
+        <HiOutlineUserCircle
+          style={{ color: "black", fontSize: "2rem" }}
+        />
+      </IconButton>
+      <Typography
+        sx={{
+          fontSize: { xs: "0.8rem", md: "0.9rem" },
+          color: "black",
+        }}
+      >
+        Profile
+      </Typography>
+    </Box>
+  </LinkContainer>
+      )}
+    </Box>
+  )}
+{/* Cart */}
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column", // Stack icon and text
+        alignItems: "center",
+        textAlign: "center",
+        gap: 0.5, // Space between icon and text
+      }}
+    >
+      <IconButton color="inherit"  onClick={()=> toggleDrawer(true)}>
+        <Badge
+          badgeContent={cartItems.reduce(
+            (acc, currItem) => acc + currItem.qty,
+            0
+          )}
+          invisible={cartItems.length === 0}
+          color="secondary"
+        >
+          <IoCartOutline
+            style={{
+              color: "black",
+              fontSize:'2rem'
+            }}
+          />
+        </Badge>
+      </IconButton>
+      <Typography
+        sx={{
+          fontSize: { xs: "0.8rem", md: "0.9rem" },
+          color: "black",
+        }}
+      >
+        Cart
+      </Typography>
+    </Box>
+  <Box>
+  </Box>
+</Box>
+</Toolbar> -->

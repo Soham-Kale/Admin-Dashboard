@@ -1,0 +1,27 @@
+   <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 26 26"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3 13C3 7.47715 7.47715 3 13 3V3C18.5228 3 23 7.47715 23 13V19.3636C23 20.4219 23 20.951 22.8424 21.3737C22.589 22.0531 22.0531 22.589 21.3737 22.8424C20.951 23 20.4219 23 19.3636 23H13C7.47715 23 3 18.5228 3 13V13Z"
+            stroke="black"
+            strokeWidth="1.6"
+          ></path>
+          <path
+            d="M9.25 11.75L16.75 11.75"
+            stroke="black"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.6"
+          ></path>
+          <path
+            d="M13 16.75H16.75"
+            stroke="black"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.6"
+          ></path>
+        </svg>
