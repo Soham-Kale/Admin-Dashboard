@@ -22,31 +22,6 @@ const Searchbar = () => {
         setSearchQuery(query.toLowerCase());
     };
 
-    // const filteredProducts = products?.filter((product: any) => {
-    //     const matchesSearch =
-    //         product.name?.toLowerCase().includes(searchQuery) ||
-    //         "" ||
-    //         product.sku?.toLowerCase().includes(searchQuery) ||
-    //         "" ||
-    //         product.category?.toLowerCase().includes(searchQuery) ||
-    //         "";
-
-    //     let matchesTab = true;
-    //     switch (tabValue) {
-    //         case 1:
-    //             matchesTab = product.status === "Published";
-    //             break;
-    //         case 2:
-    //             matchesTab = product.status === "Low Stock";
-    //             break;
-    //         case 3:
-    //             matchesTab = product.status === "Draft";
-    //             break;
-    //     }
-
-    //     return matchesSearch && matchesTab;
-    // });
-
     const createProductHandler = async () => {
         if (window.confirm("Are you sure, you want to create a new product?")) {
             try {

@@ -1,20 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
 import './assets/styles/index.css'
 import './assets/styles/bootstrap.custom.css'
 import {createBrowserRouter,createRoutesFromElements,Route,RouterProvider,} from 'react-router-dom'
-import HomeScreeen from './apps/customer/pages/HomeScreeen.tsx'
-import ProductScreen from './apps/customer/pages/ProductScreen.tsx'
 import { Provider } from 'react-redux'
-import CartScreen from './apps/customer/pages/CartScreen.tsx' 
-import LoginScreen from './apps/customer/pages/LoginScreen.tsx'
-import RegisterScreen from './apps/customer/pages/RegisterScreen.tsx'
+// import App from './App.tsx'
+// import HomeScreeen from './apps/customer/pages/HomeScreeen.tsx'
+// import ProductScreen from './apps/customer/pages/ProductScreen.tsx'
+// import CartScreen from './apps/customer/pages/CartScreen.tsx' 
+// import LoginScreen from './apps/customer/pages/LoginScreen.tsx'
+// import RegisterScreen from './apps/customer/pages/RegisterScreen.tsx'
+// import ShippingScreen from './apps/customer/pages/ShippingScreen.tsx'
+// import PlaceOrderScreen from './apps/customer/pages/PlaceOrderScreen.tsx'
 import store from './core/store/store.ts'
-import ShippingScreen from './apps/customer/pages/ShippingScreen.tsx'
 import PrivateRoute from './apps/customer/routes/PrivateRoute/PrivateRoute.tsx'
 import PaymentScreen from './apps/customer/pages/PaymentScreen.tsx'
-import PlaceOrderScreen from './apps/customer/pages/PlaceOrderScreen.tsx'
 import OrderScreen from './apps/customer/pages/OrderScreen.tsx';
 import AdminRoute from './apps/admin/routes/AdminRoute.tsx'
 import OrderListScreen from './apps/admin/pages/OrderListScreen.tsx'
@@ -39,7 +39,7 @@ import {PostHogProvider} from 'posthog-js/react';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <> 
-    <Route path='/' element={<App/>}>
+    {/* <Route path='/' element={<App/>}>
         <Route index={true} path='/' element={<HomeScreeen/>}/>
         <Route  path='/product/:id' element={<ProductScreen _id={''} name={''} image={''} price={0} qty={0} countInStock={0} category={''}/>}/>
         <Route  path='/cart' element={<CartScreen/>}/>
@@ -49,10 +49,10 @@ const router = createBrowserRouter(
         <Route  path='/shipping' element={<ShippingScreen/>}/>
         <Route path='/placeorder' element={<PlaceOrderScreen/>}/>
         </Route>
-    </Route>
+    </Route> */}
     
     <Route path='' element={<AdminRoute/>}>
-          <Route path='/admin/dashboard' element={<Dashboard/>}/>
+          <Route path='/' element={<Dashboard/>}/>
           <Route path='/admin/order' element={<OrderListScreen/>}/>
           <Route path='/admin/product' element={<ProductListScreen/>}/>
           <Route path="/add-product" element={<AddProductPage />} />
