@@ -25,7 +25,7 @@ import { IoChevronForwardSharp } from "react-icons/io5";
 import { useCreateOrderMutation } from "../../../core/store/slices/ordersApiSlice";
 import Loader from "../../../shared/components/Loader/Loader";
 import io from 'socket.io-client';
-import {BACKEND_URL} from "../../../shared/constants/constants";
+import {BASE_URL} from "../../../shared/constants/constants";
 import OrderConfirmLoader from "../components/OrderConfirmLoader/OrderConfirmLoader";
 
 interface RootState {
@@ -68,7 +68,7 @@ const PaymentScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cart = useSelector((state: RootState) => state.cart);
-  const socket = io(BACKEND_URL);
+  const socket = io(BASE_URL);
   const [createOrder, { isLoading, error }] = useCreateOrderMutation();
   const [showLoader,setShowLoader] = useState(false);
   const {userAddresses} = useSelector((state: RootState)=> state.auth);
@@ -83,7 +83,7 @@ const PaymentScreen = () => {
       const res = await createOrder({
         orderItems: cart.cartItems,
         paymentMethod,
-         totalPrice,
+        totalPrice,
       }).unwrap();
       console.log('Your order', res);
       dispatch(savePaymentMethod(paymentMethod));
@@ -102,9 +102,7 @@ const PaymentScreen = () => {
     setSelectPaymentMethod((prev) => !prev);
     setPaymentMethod("Cash On Delivery")
   };
- 
-  
- 
+
   useEffect(() => {
     if ("Notification" in window) {
       if (Notification.permission === "default" || Notification.permission === "denied") {

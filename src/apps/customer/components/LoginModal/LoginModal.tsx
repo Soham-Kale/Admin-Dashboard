@@ -15,7 +15,7 @@ import bg from "/images/background/bg.svg";
 import { toast } from "react-toastify";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import axios from "axios";
-import { OTP_URL,  BACKEND_URL} from "../../../../shared/constants/constants"; 
+import { OTP_URL,  BASE_URL} from "../../../../shared/constants/constants"; 
 import { useDispatch } from "react-redux";
 import { setAuth } from "../../../../core/store/slices/authSlice";
 import { useLoginMutation } from "../../../../core/store/slices/usersApiSlice"; 
@@ -62,7 +62,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ openModal, closeModal }) => {
       startTimer();
       setIsEnabled(false);
   
-      const response = await axios.post(`${BACKEND_URL}${OTP_URL}/send`, {
+      const response = await axios.post(`${BASE_URL}${OTP_URL}/send`, {
         phoneNumber,
         sessionId,
       });
@@ -102,7 +102,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ openModal, closeModal }) => {
     console.log("Entered OTP:", otpToken);
   
     try { 
-      //  const response =await axios.post(`${BACKEND_URL}${OTP_URL}/verify`,{
+      //  const response =await axios.post(`${BASE_URL}${OTP_URL}/verify`,{
       //   phoneNumber,
       //   otpToken
       // });

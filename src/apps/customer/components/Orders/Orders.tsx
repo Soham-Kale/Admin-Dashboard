@@ -7,11 +7,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { NavigateNextSharp } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
-import {BACKEND_URL} from "../../../../shared/constants/constants";
+import {BASE_URL} from "../../../../shared/constants/constants";
 import orderDelivered from "/images/icons/green_tick.svg";
 import orderArriving from '/images/icons/order_arriving.png';
 
-const socket = io(BACKEND_URL);
+const socket = io(BASE_URL);
 interface Order {
   _id: string;
   orderItems: any[];
@@ -19,6 +19,7 @@ interface Order {
   createdAt: string;
   totalPrice: number;
 }
+
 const Orders = () => {
   const { data: orders, isLoading, error } = useGetMyOrdersQuery({});
   const navigate = useNavigate();

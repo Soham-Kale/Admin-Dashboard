@@ -14,8 +14,8 @@ import { useSelector } from "react-redux";
 import {AppBar,Box,Button,IconButton,Toolbar,Typography} from "@mui/material";
 import billIcon from "/images/icons/bill_icon.svg";
 import { io } from "socket.io-client";
-import {BACKEND_URL} from "../../../shared/constants/constants";
-const socket = io(BACKEND_URL);
+import {BASE_URL} from "../../../shared/constants/constants";
+const socket = io(BASE_URL);
 import arriving from '/images/icons/order_arriving.png'
 import delivered from '/images/icons/order_delivered.svg'
 interface RootState {

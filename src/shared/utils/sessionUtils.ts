@@ -1,11 +1,11 @@
 import axios from "axios";
-import { BACKEND_URL } from "../constants/constants";
+import { BASE_URL } from "../constants/constants";
 
   export const initializeSessionId = async () => {
     try {
         let sessionId = sessionStorage.getItem("sessionId");
         if (!sessionId) {
-          const response = await axios.get(`${BACKEND_URL}`);
+          const response = await axios.get(`${BASE_URL}`);
           const { sessionId, sessionExpiryTime } = response.data;
           if (sessionId) {
             sessionStorage.setItem("sessionId", sessionId);
